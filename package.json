@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/GopalMamtani/RNStartupKit/issues"
   },
-  "homepage": "https://github.com/GopalMamtani/RNStartupKit#readme"
+  "homepage": "https://github.com/GopalMamtani/RNStartupKit#readme",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-native": "^0.61.5",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "prettier": "^1.19.1"
+  }
 }
