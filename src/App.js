@@ -3,13 +3,19 @@ import { Text } from 'react-native';
 import { connect } from "react-redux";
 import { View, Button} from 'react-native';
 
-class App extends Component {
+class App extends Component { 
   render() {
     return (
       <View >
-        <Text>Hello:{this.props.age}</Text>
-          <Button onPress={this.props.onAgeUp} title="AgeUp" color="#FFFFFF" />
-          <Button onPress={this.props.onAgeDown} title="AgeDown" color="#FFFFFF" />
+        
+        <Button
+         title = "RN Kit!"
+         color = "red"
+      />
+          <Button onPress={this.props.onAgeUp} title="++++++++" color="red"/>
+          <Text>Hello{this.props.age.age}</Text>
+          <Button onPress={this.props.onAgeDown} title="------" color="red" />
+          
         </View>
     
     );
