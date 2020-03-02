@@ -7,13 +7,13 @@ const intialState = {
       case "AGE_UP":
         return {
           ...state,
-          age: state.age + 1
+          age: state.age + action.payload
         };
   
       case "AGE_DOWN":
         return {
           ...state,
-          age: state.age - 1
+          age: state.age - action.payload
         };
   
       default:
