@@ -17,7 +17,7 @@ class ModuleOneComponent extends Component {
           <Button onPress={this.props.AgeActionCreators.ageIncrement} title="++++++++" color="red"/>
           <Text>Hello {this.props.age.age}</Text>
           <Button onPress={this.props.AgeActionCreators.ageDecrement} title="-----------" color="red" />
-          <Button title="Take Me to screen 2" color="green" />
+          <Button title="Take Me to screen 2" onPress={() => this.props.handleNavigation.navigation.navigate('Module2')} color="green" />
         </View>
     
     );
