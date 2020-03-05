@@ -4,10 +4,13 @@
   "description": "This is React Native Startup Kit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "android": "react-native run -android",
     "ios": "react-native run-ios",
     "start": "react-native start"
+  },
+  "jest": {
+    "preset": "react-native"
   },
   "repository": {
     "type": "git",
@@ -35,7 +38,9 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/runtime": "^7.8.4",
+    "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
+    "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.58.0",
     "prettier": "^1.19.1"
   }
