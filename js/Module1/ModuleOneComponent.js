@@ -13,7 +13,7 @@ export default function ModuleOneComponent ({navigation}) {
          color = "red"
       />
           <Button onPress={() => dispatch(AgeActionCreators.ageIncrement())} title="++++++++" color="red"/>
-          <Text>Hello {useSelector(state => state.age.age)}</Text>
+          <Text>Hello {useSelector(state => state.main.age)}</Text>
           <Button onPress={() => dispatch(AgeActionCreators.ageDecrement())} title="-----------" color="red" />
           <Button title="Take Me to screen 2" 
           onPress={() => navigation.navigate('Module2',{key:'passing this object from scrren one as route param'})} 

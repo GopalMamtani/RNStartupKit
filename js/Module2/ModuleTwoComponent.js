@@ -3,7 +3,7 @@ import { View, Text, Button } from 'react-native';
 import { useSelector } from 'react-redux';
 
 export default function ModuleTwoComponent ({route,navigation}) {
-    const ageCounterVal = useSelector(state => state.age.age);
+    const ageCounterVal = useSelector(state => state.main.age);
     return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen {ageCounterVal}</Text>

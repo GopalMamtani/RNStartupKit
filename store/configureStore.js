@@ -2,7 +2,7 @@ import { createStore, combineReducers } from 'redux';
 import ageReducer from '../js/Module1/ModuleOneReducer';
 
 const rootReducer = combineReducers(
-{ age: ageReducer }
+{ main: ageReducer }
 );
 
 const configureStore = () => {
