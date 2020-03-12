@@ -1,44 +1,24 @@
 import React, {Component} from 'react';
-import { bindActionCreators } from 'redux';
 import { Text } from 'react-native';
-import { connect } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { View, Button} from 'react-native';
 import * as AgeActionCreators from './ModuleOneActions'
 
-class ModuleOneComponent extends Component { 
-  render() {
+export default function ModuleOneComponent ({navigation}) { 
+  const dispatch = useDispatch();
     return (
-      <View >
-        
+      <View >  
         <Button
          title = "RN Kit!"
          color = "red"
       />
-          <Button onPress={this.props.AgeActionCreators.ageIncrement} title="++++++++" color="red"/>
-          <Text>Hello {this.props.age.age}</Text>
-          <Button onPress={this.props.AgeActionCreators.ageDecrement} title="-----------" color="red" />
+          <Button onPress={() => dispatch(AgeActionCreators.ageIncrement())} title="++++++++" color="red"/>
+          <Text>Hello {useSelector(state => state.age.age)}</Text>
+          <Button onPress={() => dispatch(AgeActionCreators.ageDecrement())} title="-----------" color="red" />
           <Button title="Take Me to screen 2" 
-          onPress={() => this.props.handleNavigation.navigation.navigate('Module2',{key:'passing this object from scrren one as route param'})} 
+          onPress={() => navigation.navigate('Module2',{key:'passing this object from scrren one as route param'})} 
           color="green" />
         </View>
     
     );
-  }
 }
-
-const mapStateToProps = state => {
-  return {
-    age: state.age
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    AgeActionCreators: bindActionCreators(AgeActionCreators, dispatch),
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ModuleOneComponent);
