@@ -8,12 +8,8 @@ export default function ModuleOneComponent ({navigation}) {
   const dispatch = useDispatch();
     return (
       <View >  
-        <Button
-         title = "RN Kit!"
-         color = "red"
-      />
           <Button onPress={() => dispatch(AgeActionCreators.ageIncrement())} title="++++++++" color="red"/>
-          <Text>Hello {useSelector(state => state.main.age)}</Text>
+          <Text style = {{textAlign:'center'}}>Hello {useSelector(state => state.main.age)}</Text>
           <Button onPress={() => dispatch(AgeActionCreators.ageDecrement())} title="-----------" color="red" />
           <Button title="Take Me to screen 2" 
           onPress={() => navigation.navigate('Module2',{key:'passing this object from scrren one as route param'})} 
