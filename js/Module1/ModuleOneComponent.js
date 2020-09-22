@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { View, Button, FlatList, TextInput } from "react-native";
 import * as AgeActionCreators from "./ModuleOneActions";
 import CustomText from "../../CommonComponents/CustomText";
+import yelp from '../Api/AxiosApiKit';
 
 export default function ModuleOneComponent({ navigation }) {
   const dispatch = useDispatch();
@@ -28,6 +29,16 @@ export default function ModuleOneComponent({ navigation }) {
     },
   ];
   const [name, setName] = useState("");
+  const [results,setResults]= useState([]);
+  const searchApi = async() =>{ 
+    try{
+   const response = await yelp.get('/users');
+   setResults(response.data);
+    }
+    catch(err){
+      alert('try again later api phat gyi');
+    }
+  }
   return (
     <View>
       <Button
@@ -69,8 +80,10 @@ export default function ModuleOneComponent({ navigation }) {
         }}
         value={name}
         onChangeText={(newValue) => setName(newValue)}
+        onEndEditing={(newValue)=>{searchApi(newValue)}}
       />
       <Text> my name is {name} </Text>
+      <Text> Data we got from api is {JSON.stringify(results)} </Text>
     </View>
   );
 }
