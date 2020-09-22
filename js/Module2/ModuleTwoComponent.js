@@ -8,6 +8,7 @@ export default function ModuleTwoComponent ({route,navigation}) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen {ageCounterVal}</Text>
       <Button title="Go Back" onPress={() => navigation.goBack()}/>
+      <Button title="Get User Data" onPress={() => navigation.navigate('UserModule')}/>
     <Text>{route.params.key}</Text>
     </View>
   );

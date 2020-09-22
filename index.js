@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import ModuleOneComponent from './js/Module1/ModuleOneComponent'
 import ModuleTwoComponent from './js/Module2/ModuleTwoComponent';
+import UserModuleComponent from './js/UserModule/UserModuleComponent';
 
 import configureStore from './store/configureStore';
 
@@ -18,6 +19,7 @@ const RNRedux = () => (
          <stack.Navigator initialRouteName="Module1">
             <stack.Screen name="Module1" component={ModuleOneComponent}/>
             <stack.Screen name="Module2" component={ModuleTwoComponent}/>
+            <stack.Screen name="UserModule" component={UserModuleComponent}/>
          </stack.Navigator>
        </NavigationContainer>
     </Provider>
